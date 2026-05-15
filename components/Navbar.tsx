@@ -25,7 +25,10 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
           <img src="/aion-icon-logo.png" alt="Aion Logo" className="w-10 h-10 rounded-2xl object-cover transition-transform group-hover:scale-105 shadow-sm" />
-          <span className="text-xl font-bold tracking-wide text-white group-hover:text-aion-cyan transition-colors">Aion</span>
+          <div className="flex flex-col justify-center">
+            <span className="text-xl font-bold tracking-wide text-white group-hover:text-aion-cyan transition-colors leading-tight">Aion</span>
+            <span className="text-[10px] text-aion-cyan hidden lg:block">Structured Liquidity Infrastructure</span>
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">

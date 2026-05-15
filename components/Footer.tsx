@@ -30,7 +30,7 @@ export default function Footer() {
           <h4 className="text-white font-bold mb-2">Legal & Compliance</h4>
           <Link href="/terms" className="text-sm text-aion-muted hover:text-white transition-colors">Terms of Service</Link>
           <Link href="/privacy" className="text-sm text-aion-muted hover:text-white transition-colors">Privacy Policy</Link>
-          <Link href="#" className="text-sm text-aion-muted hover:text-white transition-colors">Risk Disclosures</Link>
+          <Link href="/risks" className="text-sm text-aion-muted hover:text-white transition-colors">Risk Disclosures</Link>
           <Link href="#" className="text-sm text-aion-muted hover:text-white transition-colors">Cookie Policy</Link>
         </div>
 

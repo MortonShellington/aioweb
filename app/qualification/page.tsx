@@ -126,24 +126,6 @@ export default function QualificationPage() {
                       </div>
                     </div>
 
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <label className="block text-sm font-medium text-aion-muted">Contract Address</label>
-                        <div className="group relative">
-                          <Info className="w-4 h-4 text-aion-muted cursor-help hover:text-white transition-colors" />
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 bg-aion-nav border border-white/10 rounded-xl text-xs text-aion-muted opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 shadow-xl">
-                            Why we ask: Used by our quantitative team to assess on-chain liquidity distribution and tokenomics prior to our call.
-                          </div>
-                        </div>
-                      </div>
-                      <input 
-                        type="text" 
-                        value={formData.contractAddress}
-                        onChange={e => updateForm('contractAddress', e.target.value)}
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-aion-cyan focus:bg-white/[0.05] transition-all font-mono text-sm"
-                        placeholder="0x..."
-                      />
-                    </div>
 
                     <div className="grid grid-cols-2 gap-6">
                       <div>
@@ -222,7 +204,7 @@ export default function QualificationPage() {
                     <div>
                       <label className="block text-sm font-medium text-aion-muted mb-4">Current Venues</label>
                       <div className="flex flex-wrap gap-3">
-                        {['Binance', 'Coinbase', 'Bybit', 'OKX', 'KuCoin', 'Uniswap', 'PancakeSwap', 'Raydium', 'Other'].map(venue => (
+                        {['Binance', 'Coinbase', 'Bybit', 'OKX', 'KuCoin', 'Bitget', 'MEXC', 'Kraken', 'Aster', 'Hyperliquid', 'Uniswap', 'PancakeSwap', 'Raydium', 'Other'].map(venue => (
                           <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}

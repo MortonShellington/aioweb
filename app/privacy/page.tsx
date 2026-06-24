@@ -21,7 +21,7 @@ export default function PrivacyPage() {
         <div className="space-y-10 text-aion-muted leading-relaxed prose prose-invert max-w-none">
           <section>
             <p className="text-lg">
-              Aion Services SA (“Aion,” “we,” “us”) respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you visit <a href="https://aioweb.vercel.app" className="text-aion-cyan hover:underline">https://aioweb.vercel.app</a> or submit a qualification request.
+              Aion Services SA (“Aion,” “we,” “us”) respects your privacy. This Privacy Policy explains how we collect, use, and protect information when you visit <a href="https://www.aion.financial" className="text-aion-cyan hover:underline">https://www.aion.financial</a> or submit a qualification request.
             </p>
           </section>
 

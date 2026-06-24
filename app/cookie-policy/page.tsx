@@ -21,7 +21,7 @@ export default function CookiePolicyPage() {
         <div className="space-y-10 text-aion-muted leading-relaxed prose prose-invert max-w-none">
           <section>
             <p className="text-lg">
-              This Cookie Policy explains how Aion uses cookies and similar technologies on <a href="https://aioweb.vercel.app" className="text-aion-cyan hover:underline">https://aioweb.vercel.app</a>.
+              This Cookie Policy explains how Aion uses cookies and similar technologies on <a href="https://www.aion.financial" className="text-aion-cyan hover:underline">https://www.aion.financial</a>.
             </p>
           </section>
 

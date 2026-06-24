@@ -7,6 +7,8 @@ import { ChevronRight, ChevronLeft, CheckCircle2, Info } from "lucide-react";
 export default function QualificationPage() {
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   
   const [formData, setFormData] = useState({
     projectName: "",
@@ -36,6 +38,25 @@ export default function QualificationPage() {
 
   const nextStep = () => setStep(s => Math.min(s + 1, 3));
   const prevStep = () => setStep(s => Math.max(s - 1, 1));
+
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch('/api/qualify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Submission failed');
+      setIsSubmitted(true);
+    } catch (err: any) {
+      setSubmitError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="flex-grow flex flex-col items-center pt-32 pb-24 px-6 relative min-h-screen">
@@ -291,14 +312,28 @@ export default function QualificationPage() {
                   Continue <ChevronRight className="w-5 h-5" />
                 </motion.button>
               ) : (
-                <motion.button 
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={() => setIsSubmitted(true)}
-                  className="flex items-center gap-2 px-8 py-3 rounded-xl bg-aion-cyan text-aion-nav font-bold hover:bg-white shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] transition-all"
-                >
-                  Submit Application
-                </motion.button>
+                <div className="flex flex-col items-end gap-2">
+                  {submitError && (
+                    <p className="text-red-400 text-xs text-right max-w-xs">{submitError}</p>
+                  )}
+                  <motion.button 
+                    whileHover={{ scale: isLoading ? 1 : 1.02 }}
+                    whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                    onClick={handleSubmit}
+                    disabled={isLoading}
+                    className="flex items-center gap-2 px-8 py-3 rounded-xl bg-aion-cyan text-aion-nav font-bold hover:bg-white shadow-[0_0_20px_rgba(0,240,255,0.3)] hover:shadow-[0_0_30px_rgba(0,240,255,0.5)] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    {isLoading ? (
+                      <>
+                        <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                        </svg>
+                        Sending…
+                      </>
+                    ) : 'Submit Application'}
+                  </motion.button>
+                </div>
               )}
             </div>
           </>

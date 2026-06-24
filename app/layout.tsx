@@ -9,6 +9,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Aion - Structured Liquidity & Yield",
   description: "Cross-venue execution. Optimized token liquidity. Institutional-grade yield structures.",
+  icons: {
+    icon: "/aion-icon-logo.png",
+    shortcut: "/aion-icon-logo.png",
+    apple: "/aion-icon-logo.png",
+  },
 };
 
 export default function RootLayout({

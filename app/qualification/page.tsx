@@ -63,9 +63,9 @@ export default function QualificationPage() {
       <div className="absolute top-1/4 right-1/4 w-[40%] h-[40%] bg-aion-cyan/5 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-3xl w-full text-center mb-12 relative z-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Qualification Assessment</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Counterparty Qualification</h1>
         <p className="text-lg text-aion-muted max-w-2xl mx-auto">
-          Provide your project's market profile. Our quantitative team will review your parameters to determine strategic fit and execution possibilities.
+          Provide your project's market profile. Our quantitative team will review your parameters to determine fit as a counterparty to the desk.
         </p>
       </div>
 
@@ -258,7 +258,7 @@ export default function QualificationPage() {
                     <div className="grid gap-4">
                       {[
                         { id: 'liquidity', title: 'Enhance Market Liquidity', desc: 'Improve order book depth and tighten spreads across venues.' },
-                        { id: 'yield', title: 'Generate Treasury Yield', desc: 'Deploy structured covered options to earn yield on native assets.' },
+                        { id: 'yield', title: 'Generate Treasury Yield', desc: 'Deploy structured strategies to earn yield on native assets.' },
                         { id: 'both', title: 'Comprehensive Structure', desc: 'Both liquidity enhancement and yield generation.' }
                       ].map(goal => (
                         <motion.button

@@ -10,22 +10,19 @@ export default function AboutPage() {
       <div className="absolute top-1/4 right-0 w-[40%] h-[40%] bg-aion-cyan/5 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-4xl w-full text-center mb-16">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">About Aion Services SA</h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">About Aion</h1>
         <p className="text-xl text-aion-muted">
-          Institutional liquidity infrastructure bridging traditional financial engineering with digital asset ecosystems.
+          A proprietary trading firm operating across digital asset derivatives markets.
         </p>
       </div>
 
       <div className="max-w-4xl w-full glass-card rounded-[32px] p-8 md:p-16 mb-16">
         <div className="space-y-8 text-lg text-aion-muted leading-relaxed">
           <p>
-            Aion Services SA operates at the intersection of quantitative trading and institutional treasury management. We provide sophisticated market structure solutions to Tier-1 digital asset foundations, protocol treasuries, and major token projects.
+            Aion Services SA is a proprietary trading firm operating across digital asset derivatives markets. We trade a multi-strategy book — combining options, arbitrage, and liquidity strategies — using our own capital and institutional-grade infrastructure spanning custody, execution, and clearing venues globally.
           </p>
           <p>
-            The digital asset market frequently suffers from the "liquidity paradox" — projects possess significant on-paper wealth in their native token, but lack the structural liquidity required to monetize it without causing outsized market impact.
-          </p>
-          <p>
-            We deploy infrastructure historically reserved for traditional finance, such as covered options strategies and multi-venue arbitrage acceleration, allowing our counterparties to achieve execution excellence and generate organic yield.
+            Unlike a service provider administering a single yield product, Aion is a trading counterparty: institutions and token treasuries work directly with our desk, accessing infrastructure and expertise historically reserved for traditional finance.
           </p>
         </div>
       </div>

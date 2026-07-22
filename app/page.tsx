@@ -47,7 +47,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-aion-cyan opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-aion-cyan"></span>
             </span>
-            Next-Gen Institutional Infrastructure
+            Institutional Digital Asset Trading
           </motion.div>
 
           <motion.h1
@@ -56,7 +56,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             className="text-5xl md:text-7xl font-bold tracking-tight text-white max-w-4xl leading-[1.1] mb-6"
           >
-            Structured Liquidity & Yield for Digital Asset Treasuries
+            A Proprietary Trading Firm for Digital Asset Markets
           </motion.h1>
 
           <motion.p
@@ -65,7 +65,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="text-lg md:text-xl text-aion-muted max-w-2xl leading-relaxed mb-10"
           >
-            Cross-venue execution. Optimized token liquidity. Institutional-grade yield structures — without dumping your assets.
+            Aion trades a multi-strategy derivatives book across centralized and decentralized venues — giving institutions and token treasuries access to our desk without giving up control of their assets.
           </motion.p>
 
           <motion.div
@@ -78,7 +78,7 @@ export default function Home() {
               Start Qualification
             </Link>
             <Link href="/strategies" className="w-full sm:w-auto px-8 py-4 rounded-full glass border border-white/10 text-white font-semibold hover:bg-white/5 transition-all">
-              Explore Strategies
+              The Desk
             </Link>
           </motion.div>
 
@@ -118,10 +118,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
             {[
-              { label: "Tier-1 Counterparties", value: "10+" },
+              { label: "Trading Venues", value: "6+" },
               { label: "Global Monitoring", value: "24/7" },
-              { label: "Yield Improvement", value: "Up to 8%" },
-              { label: "Capital Supported", value: "$500M+" }
+              { label: "Trading Structure", value: "Principal Capital" },
+              { label: "Notional Capacity", value: "$500M+" }
             ].map((stat, i) => (
               <motion.div
                 key={i}
@@ -142,8 +142,8 @@ export default function Home() {
       {/* Value Propositions */}
       <section className="w-full max-w-7xl mx-auto px-6 py-32">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Built for Token Treasuries</h2>
-          <p className="text-aion-muted text-lg max-w-2xl mx-auto">We solve the liquidity paradox for digital asset foundations, allowing you to monetize your treasury without applying downward pressure to your market.</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">A Multi-Strategy Trading Desk</h2>
+          <p className="text-aion-muted text-lg max-w-2xl mx-auto">Aion runs a proprietary trading book across digital asset derivatives markets. Token treasuries are one class of counterparty we work with — receiving structured monetization of their native assets without market impact.</p>
         </div>
 
         <motion.div
@@ -161,13 +161,13 @@ export default function Home() {
             },
             {
               icon: <Shield className="w-8 h-8 text-aion-cyan" />,
-              title: "Institutional Guardrails",
-              desc: "Execution parameters bound by strict risk controls and transparent performance reporting."
+              title: "Institutional Infrastructure",
+              desc: "Custody, execution, and clearing across BitGo, Fireblocks, FalconX, Deribit, Binance, and Bitnomial."
             },
             {
               icon: <TrendingUp className="w-8 h-8 text-aion-green" />,
-              title: "Treasury-Backed Yield",
-              desc: "Covered option structures enabling token treasuries to generate revenue from their native assets."
+              title: "Principal Trading",
+              desc: "We trade with our own capital. Treasuries and institutions engage Aion as a counterparty, not a service vendor."
             }
           ].map((feature, i) => (
             <motion.div
@@ -201,20 +201,20 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-flex px-4 py-2 rounded-full border border-aion-cyan/20 bg-aion-cyan/10 text-aion-cyan text-sm mb-6">
-              Core Strategies
+              The Desk
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Institutional Market Structure Solutions
+              A Trading Book, Not a Product Pitch
             </h2>
             <p className="text-aion-muted text-lg leading-relaxed mb-8">
-              Aion delivers sophisticated infrastructure historically reserved for traditional finance. We partner with Tier-1 foundations to professionalize their token's market structure.
+              Aion operates a multi-strategy derivatives book spanning options, arbitrage, and liquidity strategies. Strategy detail is shared directly with qualified counterparties during the review process — not published here.
             </p>
 
             <div className="space-y-4 mb-10">
               {[
-                "Arbitrage Volume Accelerator",
-                "Cross-Exchange Liquidity Optimization",
-                "European-Style Covered Options"
+                "Institutional-grade risk controls",
+                "Custody segregation across venues",
+                "Direct access via qualification"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4 p-4 rounded-2xl glass-panel">
                   <div className="w-8 h-8 rounded-full bg-aion-cyan/20 flex items-center justify-center">
@@ -226,7 +226,7 @@ export default function Home() {
             </div>
 
             <Link href="/strategies" className="inline-flex items-center gap-2 text-aion-cyan hover:text-white transition-colors font-medium text-lg">
-              View Detailed Strategies <ArrowRight className="w-5 h-5" />
+              About The Desk <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
 
@@ -299,7 +299,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.15),transparent_60%)] pointer-events-none" />
 
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Ready to Professionalize Your Token?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Work With Our Desk</h2>
             <p className="text-lg text-aion-muted mb-10">
               Submit your market structure profile for a preliminary assessment. Qualified counterparties will be invited to a strategic review.
             </p>

@@ -7,8 +7,8 @@ import Footer from "../components/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Aion - Structured Liquidity & Yield",
-  description: "Cross-venue execution. Optimized token liquidity. Institutional-grade yield structures.",
+  title: "Aion - Institutional Digital Asset Trading",
+  description: "A proprietary trading firm operating across digital asset derivatives markets.",
   icons: {
     icon: "/aion-icon-logo.png",
     shortcut: "/aion-icon-logo.png",

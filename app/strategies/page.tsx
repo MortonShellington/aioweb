@@ -10,15 +10,14 @@ export default function StrategiesPage() {
       <div className="absolute top-1/4 left-0 w-[40%] h-[40%] bg-aion-cyan/5 blur-[120px] rounded-full pointer-events-none" />
       
       <div className="max-w-4xl w-full mb-20 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Institutional Market Structure</h1>
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">The Desk</h1>
         <p className="text-xl text-aion-muted">
-          Aion operates sophisticated execution strategies designed to solve the structural challenges faced by digital asset foundations and protocol treasuries.
+          Aion is a proprietary trading firm — we trade our own capital across a multi-strategy derivatives book, spanning options, arbitrage, and liquidity strategies across centralized and decentralized venues.
         </p>
       </div>
 
       <div className="max-w-5xl w-full grid gap-12">
-        {/* Strategy 1 */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -26,16 +25,16 @@ export default function StrategiesPage() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-aion-cyan/10 blur-[80px] rounded-full" />
           <div className="relative z-10">
-            <h2 className="text-3xl font-bold text-white mb-4">Arbitrage Volume Accelerator</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">How We Work</h2>
             <p className="text-lg text-aion-muted mb-8 leading-relaxed max-w-3xl">
-              Strategic order flow execution designed to improve liquidity, activate real trading activity, and strengthen market structure across centralized and decentralized venues.
+              We don't publish our book. Token treasuries and institutions engage Aion as a counterparty, not as customers of a packaged product — specific strategy detail, sizing, and structure are shared directly with qualified counterparties as part of the review process.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                "Cross-exchange execution routing",
-                "Multi-round arbitrage order flow",
-                "Real liquidity participation",
-                "Managed execution & risk controls"
+                "Custody segregation across venues",
+                "Cross-venue execution & clearing",
+                "Documented risk controls",
+                "24/7 monitoring"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-aion-cyan" />
@@ -46,8 +45,7 @@ export default function StrategiesPage() {
           </div>
         </motion.div>
 
-        {/* Strategy 2 */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -55,16 +53,13 @@ export default function StrategiesPage() {
         >
           <div className="absolute top-0 right-0 w-64 h-64 bg-aion-green/10 blur-[80px] rounded-full" />
           <div className="relative z-10">
-            <h2 className="text-3xl font-bold text-white mb-4">Treasury-Backed Yield Structures</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Infrastructure</h2>
             <p className="text-lg text-aion-muted mb-8 leading-relaxed max-w-3xl">
-              Covered European-style options strategies enabling token treasuries to generate structured revenue without relying on routine discretionary market sales.
+              Our book runs across a network of institutional custody, execution, and derivatives venues — giving us the reach to trade and settle across both centralized and decentralized markets.
             </p>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-4">
               {[
-                "Inventory-backed covered calls",
-                "European-style option structures",
-                "Counterparty market maker network",
-                "Treasury-aligned monetization"
+                "BitGo", "Fireblocks", "FalconX", "Deribit", "Binance", "Bitnomial"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-aion-green" />

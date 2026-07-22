@@ -10,18 +10,18 @@ export default function Footer() {
             <img src="/aion-icon-logo.png" alt="Aion Logo" className="w-10 h-10 rounded-2xl object-cover shadow-sm" />
             <div>
               <h3 className="text-xl font-bold tracking-wide text-white">Aion</h3>
-              <p className="text-xs text-aion-cyan">Structured Liquidity Infrastructure</p>
+              <p className="text-xs text-aion-cyan">Institutional Digital Asset Trading</p>
             </div>
           </div>
           <p className="text-aion-muted leading-relaxed max-w-sm mb-6">
-            Institutional liquidity infrastructure and structured treasury strategies for digital asset ecosystems.
+            A proprietary trading firm operating across digital asset derivatives markets.
           </p>
         </div>
 
         <div className="flex flex-col gap-4">
           <h4 className="text-white font-bold mb-2">Quick Links</h4>
           <Link href="/" className="text-sm text-aion-muted hover:text-white transition-colors">Home</Link>
-          <Link href="/strategies" className="text-sm text-aion-muted hover:text-white transition-colors">Strategies</Link>
+          <Link href="/strategies" className="text-sm text-aion-muted hover:text-white transition-colors">The Desk</Link>
           <Link href="/qualification" className="text-sm text-aion-muted hover:text-white transition-colors">Qualification</Link>
           <Link href="/about" className="text-sm text-aion-muted hover:text-white transition-colors">About Us</Link>
         </div>
@@ -42,7 +42,7 @@ export default function Footer() {
 
           <p className="mt-8 text-xs text-white/30">
             &copy; {new Date().getFullYear()} Aion Services SA. All rights reserved.<br />
-            Strategies involve market risk and are provided only to qualified counterparties. Past performance is not indicative of future results.
+            Aion trades with its own capital. Trading involves market risk and counterparty engagements are limited to qualified parties.
           </p>
         </div>
       </div>

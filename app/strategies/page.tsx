@@ -12,7 +12,7 @@ export default function StrategiesPage() {
       <div className="max-w-4xl w-full mb-20 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">The Desk</h1>
         <p className="text-xl text-aion-muted">
-          Aion is a proprietary trading firm — we trade our own capital across a multi-strategy derivatives book, spanning options, arbitrage, and liquidity strategies across centralized and decentralized venues.
+          Aion is a proprietary trading firm that operates a multi-strategy book spanning options, arbitrage, and liquidity provisioning. Strategy detail is shared directly with qualified clients and counterparties during the review process.
         </p>
       </div>
 
@@ -27,14 +27,14 @@ export default function StrategiesPage() {
           <div className="relative z-10">
             <h2 className="text-3xl font-bold text-white mb-4">How We Work</h2>
             <p className="text-lg text-aion-muted mb-8 leading-relaxed max-w-3xl">
-              We don't publish our book. Token treasuries and institutions engage Aion as a counterparty, not as customers of a packaged product — specific strategy detail, sizing, and structure are shared directly with qualified counterparties as part of the review process.
+              We don&apos;t publish our book. Custody segregation across venues.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                "Custody segregation across venues",
                 "Cross-venue execution & clearing",
                 "Documented risk controls",
-                "24/7 monitoring"
+                "24/7 monitoring",
+                "Security baked in at every layer — redundancy and multisig by design"
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-aion-cyan" />

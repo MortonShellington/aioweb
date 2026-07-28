@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Activity, Shield, TrendingUp, Network, ArrowRight } from "lucide-react";
+import { Activity, Shield, TrendingUp, ArrowRight } from "lucide-react";
 
 export default function Home() {
   const containerVariants = {
@@ -81,61 +81,6 @@ export default function Home() {
               The Desk
             </Link>
           </motion.div>
-
-          {/* Abstract 3D Hero Graphic */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-            className="mt-20 w-full relative h-[300px] md:h-[400px] rounded-3xl overflow-hidden glass-card flex items-center justify-center border border-white/5"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-aion-cyan/10 via-transparent to-aion-green/10 opacity-50" />
-
-            <div className="relative z-10 w-full max-w-4xl px-8 flex justify-between items-center">
-              {/* Visualizing flow of liquidity */}
-              <div className="w-24 h-24 rounded-2xl glass flex items-center justify-center shadow-[0_0_30px_rgba(0,240,255,0.2)] animate-pulse">
-                <Network className="w-10 h-10 text-aion-cyan" />
-              </div>
-
-              <div className="flex-grow h-[2px] mx-4 bg-gradient-to-r from-aion-cyan/50 to-aion-green/50 relative overflow-hidden">
-                <div className="absolute inset-0 w-1/3 bg-white blur-[2px] animate-[slideRight_3s_infinite_linear]" />
-              </div>
-
-              <div className="w-24 h-24 rounded-2xl glass flex items-center justify-center shadow-[0_0_30px_rgba(34,255,136,0.2)]">
-                <TrendingUp className="w-10 h-10 text-aion-green" />
-              </div>
-            </div>
-
-            {/* Decorative shapes */}
-            <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-aion-cyan/20 blur-[60px] rounded-full" />
-            <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-aion-green/20 blur-[60px] rounded-full" />
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="w-full border-y border-white/5 bg-white/[0.02]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-white/5">
-            {[
-              { label: "Trading Venues", value: "6+" },
-              { label: "Global Monitoring", value: "24/7" },
-              { label: "Trading Structure", value: "Principal Capital" },
-              { label: "Notional Capacity", value: "$500M+" }
-            ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col items-center text-center px-4"
-              >
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-sm text-aion-muted uppercase tracking-wider">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

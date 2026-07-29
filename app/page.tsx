@@ -90,33 +90,13 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-[50%] h-[100%] bg-[radial-gradient(ellipse_at_top_left,rgba(0,240,255,0.05),transparent_50%)]" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          {/* Abstract Opportunity Visualization */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex px-4 py-2 rounded-full border border-aion-cyan/20 bg-aion-cyan/10 text-aion-cyan text-sm mb-6">
-              What We Do
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              $50B+ in Token Treasury Assets Are Generating Zero Revenue
-            </h2>
-            <p className="text-aion-muted text-lg leading-relaxed mb-4">
-              If you hold a large amount of tokens and are trying to figure out how to earn from your holdings without directly selling, Aion solves this problem — unlocking revenue by custom-tailoring strategies to best leverage your treasury&apos;s token holdings, and paying yield directly back to you.
-            </p>
-            <p className="text-aion-muted/70 text-sm italic">
-              Our strategies are not price dependent and do not seek to profit from price movements.
-            </p>
-          </motion.div>
-
-          {/* Abstract Opportunity Visualization */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative h-[500px]"
+            className="relative h-[500px] order-2 lg:order-1"
           >
             <div className="absolute inset-0 glass-card rounded-[40px] border border-aion-cyan/20 p-8 flex flex-col justify-between overflow-hidden group">
               <div className="absolute top-0 left-0 w-64 h-64 bg-aion-cyan/10 blur-[80px] rounded-full group-hover:bg-aion-cyan/20 transition-colors duration-700" />
@@ -127,12 +107,18 @@ export default function Home() {
               </div>
 
               <div className="w-full h-48 relative mt-8">
-                {/* Simulated Chart/Graph using CSS */}
+                {/* Simulated Area Chart using CSS + SVG */}
                 <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/20" />
                 <div className="absolute bottom-0 left-0 w-[1px] h-full bg-white/20" />
 
-                {/* Curve */}
+                {/* Area Chart */}
                 <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="opportunityAreaFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#00F0FF" stopOpacity="0.45" />
+                      <stop offset="100%" stopColor="#00F0FF" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
                   <path
                     d="M 0 90 L 100 90"
                     fill="none"
@@ -140,6 +126,11 @@ export default function Home() {
                     strokeOpacity="0.3"
                     strokeWidth="2"
                     strokeDasharray="4 4"
+                  />
+                  <path
+                    d="M 0 90 C 30 88, 50 60, 70 35 C 85 15, 95 5, 100 0 L 100 100 L 0 100 Z"
+                    fill="url(#opportunityAreaFill)"
+                    stroke="none"
                   />
                   <path
                     d="M 0 90 C 30 88, 50 60, 70 35 C 85 15, 95 5, 100 0"
@@ -164,6 +155,27 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="order-1 lg:order-2"
+          >
+            <div className="inline-flex px-4 py-2 rounded-full border border-aion-cyan/20 bg-aion-cyan/10 text-aion-cyan text-sm mb-6">
+              What We Do
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              $50B+ in Token Treasury Assets Are Generating Zero Revenue
+            </h2>
+            <p className="text-aion-muted text-lg leading-relaxed mb-4">
+              If you hold a large amount of tokens and are trying to figure out how to earn from your holdings without directly selling, Aion solves this problem — unlocking revenue by custom-tailoring strategies to best leverage your treasury&apos;s token holdings, and paying yield directly back to you.
+            </p>
+            <p className="text-aion-muted/70 text-sm italic">
+              Our strategies are not price dependent and do not seek to profit from price movements.
+            </p>
           </motion.div>
         </div>
       </section>

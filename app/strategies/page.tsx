@@ -44,31 +44,6 @@ export default function StrategiesPage() {
             </div>
           </div>
         </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="glass-card rounded-[32px] p-8 md:p-12 border-l-4 border-l-aion-green relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-aion-green/10 blur-[80px] rounded-full" />
-          <div className="relative z-10">
-            <h2 className="text-3xl font-bold text-white mb-4">Infrastructure</h2>
-            <p className="text-lg text-aion-muted mb-8 leading-relaxed max-w-3xl">
-              Our book runs across a network of institutional custody, execution, and derivatives venues — giving us the reach to trade and settle across both centralized and decentralized markets.
-            </p>
-            <div className="grid md:grid-cols-3 gap-4">
-              {[
-                "BitGo", "Fireblocks", "FalconX", "Deribit", "Binance", "Bitnomial"
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-aion-green" />
-                  <span className="text-white/80">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </div>
 
       <div className="mt-20">

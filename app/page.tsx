@@ -107,37 +107,158 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto mb-16">
-          <h3 className="text-xl font-semibold text-white mb-6 text-center">Institutional Infrastructure</h3>
+      </section>
+
+      {/* Institutional Infrastructure */}
+      <section className="w-full max-w-7xl mx-auto px-6 py-32">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="glass-card rounded-[40px] p-10 md:p-16 relative overflow-hidden border border-aion-cyan/20"
+        >
+          <div className="absolute top-0 right-0 w-96 h-96 bg-aion-cyan/10 blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-aion-green/5 blur-[100px] rounded-full pointer-events-none" />
+
+          <div className="relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-flex px-4 py-2 rounded-full border border-aion-cyan/20 bg-aion-cyan/10 text-aion-cyan text-sm mb-6">
+                Institutional Infrastructure
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white">
+                Built on Institutional-Grade Infrastructure
+              </h2>
+            </div>
+
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            >
+              {[
+                "Multisig security and redundancy",
+                "Custody segregation",
+                "24/7 monitoring",
+                "$1B+ tradable notional capacity",
+                "Sophisticated hedging",
+                "Multiple market makers"
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  variants={itemVariants}
+                  className="flex items-center gap-4 p-5 rounded-2xl glass-panel border border-white/5"
+                >
+                  <div className="w-8 h-8 rounded-full bg-aion-cyan/20 flex items-center justify-center flex-shrink-0">
+                    <ArrowRight className="w-4 h-4 text-aion-cyan" />
+                  </div>
+                  <span className="text-white font-medium">{item}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Strategies Overview */}
+      <section className="w-full relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-aion-card/50" />
+        <div className="absolute top-0 right-0 w-[50%] h-[100%] bg-[radial-gradient(ellipse_at_top_right,rgba(0,240,255,0.05),transparent_50%)]" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid sm:grid-cols-2 gap-4"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
           >
-            {[
-              "Multisig security and redundancy",
-              "Custody segregation",
-              "24/7 monitoring",
-              "$1B+ tradable notional capacity",
-              "Sophisticated hedging",
-              "Multiple market makers"
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={itemVariants}
-                className="flex items-center gap-4 p-4 rounded-2xl glass-panel"
-              >
-                <div className="w-8 h-8 rounded-full bg-aion-cyan/20 flex items-center justify-center flex-shrink-0">
-                  <ArrowRight className="w-4 h-4 text-aion-cyan" />
+            <div className="inline-flex px-4 py-2 rounded-full border border-aion-cyan/20 bg-aion-cyan/10 text-aion-cyan text-sm mb-6">
+              The Desk
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              A Trading Book, Not a Product Pitch
+            </h2>
+            <p className="text-aion-muted text-lg leading-relaxed mb-8">
+              Aion operates a multi-strategy derivatives book spanning options, arbitrage, and liquidity strategies. Strategy detail is shared directly with qualified counterparties during the review process — not published here.
+            </p>
+
+            <div className="space-y-4 mb-10">
+              {[
+                "Institutional-grade risk controls",
+                "Custody segregation across venues",
+                "Direct access via qualification"
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-4 p-4 rounded-2xl glass-panel">
+                  <div className="w-8 h-8 rounded-full bg-aion-cyan/20 flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 text-aion-cyan" />
+                  </div>
+                  <span className="text-white font-medium">{item}</span>
                 </div>
-                <span className="text-white font-medium">{item}</span>
-              </motion.div>
-            ))}
+              ))}
+            </div>
+
+            <Link href="/strategies" className="inline-flex items-center gap-2 text-aion-cyan hover:text-white transition-colors font-medium text-lg">
+              About The Desk <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
+
+          {/* Abstract Strategy Visualization */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative h-[500px]"
+          >
+            <div className="absolute inset-0 glass-card rounded-[40px] border border-aion-cyan/20 p-8 flex flex-col justify-between overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-aion-cyan/10 blur-[80px] rounded-full group-hover:bg-aion-cyan/20 transition-colors duration-700" />
+
+              <div>
+                <div className="text-aion-cyan text-sm font-medium mb-2">TARGET STRUCTURE</div>
+                <div className="text-3xl font-bold text-white">Yield + Liquidity</div>
+              </div>
+
+              <div className="w-full h-48 relative mt-8">
+                {/* Simulated Chart/Graph using CSS */}
+                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/20" />
+                <div className="absolute bottom-0 left-0 w-[1px] h-full bg-white/20" />
+
+                {/* Curve */}
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <path
+                    d="M 0 100 C 20 80, 40 90, 60 40 C 80 -10, 100 20, 100 20"
+                    fill="none"
+                    stroke="#00F0FF"
+                    strokeWidth="2"
+                    className="drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]"
+                  />
+                  <path
+                    d="M 0 100 C 30 90, 50 60, 70 80 C 90 100, 100 50, 100 50"
+                    fill="none"
+                    stroke="#22FF88"
+                    strokeWidth="2"
+                    className="drop-shadow-[0_0_8px_rgba(34,255,136,0.5)]"
+                  />
+                </svg>
+              </div>
+
+              <div className="mt-8 flex items-center justify-between p-4 glass-panel rounded-2xl">
+                <div>
+                  <div className="text-xs text-aion-muted">Status</div>
+                  <div className="text-sm text-aion-green font-medium flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-aion-green animate-pulse" /> Active Deployments
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-aion-muted">Monitored Assets</div>
+                  <div className="text-sm text-white font-medium">Token Treasuries</div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
-
       </section>
 
       {/* Counterparty Statement */}

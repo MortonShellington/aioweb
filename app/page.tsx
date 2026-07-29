@@ -81,15 +81,6 @@ export default function Home() {
               The Desk
             </Link>
           </motion.div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="mt-8 text-sm text-aion-muted"
-          >
-            We only win when you win.
-          </motion.p>
         </div>
       </section>
 
@@ -130,7 +121,8 @@ export default function Home() {
               "Custody segregation",
               "24/7 monitoring",
               "$1B+ tradable notional capacity",
-              "Sophisticated hedging"
+              "Sophisticated hedging",
+              "Multiple market makers"
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -146,9 +138,19 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <p className="text-aion-muted text-center max-w-2xl mx-auto leading-relaxed">
+      </section>
+
+      {/* Counterparty Statement */}
+      <section className="w-full max-w-5xl mx-auto px-6 py-24">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-white text-2xl md:text-4xl font-semibold text-center leading-snug max-w-4xl mx-auto"
+        >
           Token treasuries and institutions engage Aion as a counterparty, not as customers of a pre-packaged product — specific strategy detail, sizing, and structure are shared directly with qualified counterparties as part of the review process.
-        </p>
+        </motion.p>
       </section>
 
       {/* CTA Section */}

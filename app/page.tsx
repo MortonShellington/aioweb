@@ -85,28 +85,87 @@ export default function Home() {
       </section>
 
       {/* What We Do */}
-      <section className="w-full max-w-7xl mx-auto px-6 py-32">
-        <div className="mb-16 text-center max-w-3xl mx-auto">
-          <div className="inline-flex px-4 py-2 rounded-full border border-aion-cyan/20 bg-aion-cyan/10 text-aion-cyan text-sm mb-6">
-            What We Do
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            $50B+ in Token Treasury Assets Are Generating Zero Revenue
-          </h2>
-          <p className="text-aion-muted text-lg leading-relaxed mb-4">
-            If you hold a large amount of tokens and are trying to figure out how to earn from your holdings without directly selling, Aion solves this problem — unlocking revenue by custom-tailoring strategies to best leverage your treasury&apos;s token holdings, and paying yield directly back to you.
-          </p>
-          <p className="text-aion-muted/70 text-sm italic">
-            Our strategies are not price dependent and do not seek to profit from price movements.
-          </p>
-        </div>
+      <section className="w-full relative py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-aion-card/50" />
+        <div className="absolute top-0 left-0 w-[50%] h-[100%] bg-[radial-gradient(ellipse_at_top_left,rgba(0,240,255,0.05),transparent_50%)]" />
 
-        <div className="max-w-4xl mx-auto mb-20">
-          <p className="text-white/90 text-lg leading-relaxed text-center">
-            Aion is a proprietary trading firm operating a multi-strategy book across digital asset markets, spanning options, arbitrage, and liquidity provisioning across execution venues.
-          </p>
-        </div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex px-4 py-2 rounded-full border border-aion-cyan/20 bg-aion-cyan/10 text-aion-cyan text-sm mb-6">
+              What We Do
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+              $50B+ in Token Treasury Assets Are Generating Zero Revenue
+            </h2>
+            <p className="text-aion-muted text-lg leading-relaxed mb-4">
+              If you hold a large amount of tokens and are trying to figure out how to earn from your holdings without directly selling, Aion solves this problem — unlocking revenue by custom-tailoring strategies to best leverage your treasury&apos;s token holdings, and paying yield directly back to you.
+            </p>
+            <p className="text-aion-muted/70 text-sm italic">
+              Our strategies are not price dependent and do not seek to profit from price movements.
+            </p>
+          </motion.div>
 
+          {/* Abstract Opportunity Visualization */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative h-[500px]"
+          >
+            <div className="absolute inset-0 glass-card rounded-[40px] border border-aion-cyan/20 p-8 flex flex-col justify-between overflow-hidden group">
+              <div className="absolute top-0 left-0 w-64 h-64 bg-aion-cyan/10 blur-[80px] rounded-full group-hover:bg-aion-cyan/20 transition-colors duration-700" />
+
+              <div>
+                <div className="text-aion-cyan text-sm font-medium mb-2">THE OPPORTUNITY</div>
+                <div className="text-3xl font-bold text-white">$50B+ Idle Treasury Assets</div>
+              </div>
+
+              <div className="w-full h-48 relative mt-8">
+                {/* Simulated Chart/Graph using CSS */}
+                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/20" />
+                <div className="absolute bottom-0 left-0 w-[1px] h-full bg-white/20" />
+
+                {/* Curve */}
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <path
+                    d="M 0 90 L 100 90"
+                    fill="none"
+                    stroke="#ffffff"
+                    strokeOpacity="0.3"
+                    strokeWidth="2"
+                    strokeDasharray="4 4"
+                  />
+                  <path
+                    d="M 0 90 C 30 88, 50 60, 70 35 C 85 15, 95 5, 100 0"
+                    fill="none"
+                    stroke="#00F0FF"
+                    strokeWidth="2"
+                    className="drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]"
+                  />
+                </svg>
+              </div>
+
+              <div className="mt-8 flex items-center justify-between p-4 glass-panel rounded-2xl">
+                <div>
+                  <div className="text-xs text-aion-muted">Status Quo</div>
+                  <div className="text-sm text-white/50 font-medium">Idle, Zero Yield</div>
+                </div>
+                <div className="text-right">
+                  <div className="text-xs text-aion-muted">With Aion</div>
+                  <div className="text-sm text-aion-green font-medium flex items-center gap-2 justify-end">
+                    <span className="w-2 h-2 rounded-full bg-aion-green animate-pulse" /> Active Yield
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Institutional Infrastructure */}

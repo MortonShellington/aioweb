@@ -33,7 +33,6 @@ export default function Navbar() {
 
         <div className="hidden md:flex items-center gap-8">
           <Link href="/" className="text-sm font-medium text-aion-muted hover:text-white transition-colors">Home</Link>
-          <Link href="/strategies" className="text-sm font-medium text-aion-muted hover:text-white transition-colors">The Desk</Link>
           <Link href="/qualification" className="text-sm font-medium text-aion-muted hover:text-white transition-colors">Qualification</Link>
           <Link href="/about" className="text-sm font-medium text-aion-muted hover:text-white transition-colors">About</Link>
         </div>
@@ -56,7 +55,6 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="absolute top-full left-0 right-0 glass border-b border-white/10 p-6 flex flex-col gap-4 md:hidden backdrop-blur-xl bg-aion-nav/95">
           <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-aion-muted hover:text-white">Home</Link>
-          <Link href="/strategies" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-aion-muted hover:text-white">The Desk</Link>
           <Link href="/qualification" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-aion-muted hover:text-white">Qualification</Link>
           <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-aion-muted hover:text-white">About</Link>
           <Link href="/qualification" onClick={() => setMobileMenuOpen(false)} className="mt-4 inline-flex items-center justify-center px-6 py-3 rounded-xl bg-aion-cyan text-aion-nav font-medium">

@@ -21,7 +21,6 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <h4 className="text-white font-bold mb-2">Quick Links</h4>
           <Link href="/" className="text-sm text-aion-muted hover:text-white transition-colors">Home</Link>
-          <Link href="/strategies" className="text-sm text-aion-muted hover:text-white transition-colors">The Desk</Link>
           <Link href="/qualification" className="text-sm text-aion-muted hover:text-white transition-colors">Qualification</Link>
           <Link href="/about" className="text-sm text-aion-muted hover:text-white transition-colors">About Us</Link>
         </div>

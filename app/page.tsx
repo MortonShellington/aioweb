@@ -77,9 +77,6 @@ export default function Home() {
             <Link href="/qualification" className="w-full sm:w-auto px-8 py-4 rounded-full bg-aion-cyan text-aion-nav font-semibold hover:bg-white transition-all shadow-[0_0_30px_rgba(0,240,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.5)]">
               Start Qualification
             </Link>
-            <Link href="/strategies" className="w-full sm:w-auto px-8 py-4 rounded-full glass border border-white/10 text-white font-semibold hover:bg-white/5 transition-all">
-              The Desk
-            </Link>
           </motion.div>
         </div>
       </section>
@@ -173,8 +170,11 @@ export default function Home() {
             <p className="text-aion-muted text-lg leading-relaxed mb-4">
               If you hold a large amount of tokens and are trying to figure out how to earn from your holdings without directly selling, Aion solves this problem — unlocking revenue by custom-tailoring strategies to best leverage your treasury&apos;s token holdings, and paying yield directly back to you.
             </p>
-            <p className="text-aion-muted/70 text-sm italic">
+            <p className="text-aion-muted/70 text-sm italic mb-6">
               Our strategies are not price dependent and do not seek to profit from price movements.
+            </p>
+            <p className="text-white/90 text-base leading-relaxed border-l-2 border-aion-cyan/40 pl-4">
+              Token treasuries and institutions engage Aion as a counterparty, not as customers of a pre-packaged product — specific strategy detail, sizing, and structure are shared directly with qualified counterparties as part of the review process.
             </p>
           </motion.div>
         </div>
@@ -270,9 +270,6 @@ export default function Home() {
               ))}
             </div>
 
-            <Link href="/strategies" className="inline-flex items-center gap-2 text-aion-cyan hover:text-white transition-colors font-medium text-lg">
-              About The Desk <ArrowRight className="w-5 h-5" />
-            </Link>
           </motion.div>
 
           {/* Abstract Strategy Visualization */}
@@ -330,19 +327,6 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-      </section>
-
-      {/* Counterparty Statement */}
-      <section className="w-full max-w-5xl mx-auto px-6 py-24">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-white text-2xl md:text-4xl font-semibold text-center leading-snug max-w-4xl mx-auto"
-        >
-          Token treasuries and institutions engage Aion as a counterparty, not as customers of a pre-packaged product — specific strategy detail, sizing, and structure are shared directly with qualified counterparties as part of the review process.
-        </motion.p>
       </section>
 
       {/* CTA Section */}

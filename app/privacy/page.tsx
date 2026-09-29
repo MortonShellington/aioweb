@@ -86,7 +86,7 @@ export default function PrivacyPage() {
           <section className="pt-8 border-t border-white/10 mt-8">
             <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
             <p>
-              For privacy inquiries, please reach out through our <Link href="/qualification" className="text-aion-cyan hover:underline">Qualification form</Link>.
+              For privacy inquiries, please reach out through our <Link href="/#contact" className="text-aion-cyan hover:underline">contact form</Link>.
             </p>
           </section>
         </div>

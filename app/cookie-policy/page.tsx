@@ -84,7 +84,7 @@ export default function CookiePolicyPage() {
           <section className="pt-8 border-t border-white/10 mt-8">
             <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
             <p>
-              Questions about our cookie usage? Reach out via the <Link href="/qualification" className="text-aion-cyan hover:underline">Qualification page</Link>.
+              Questions about our cookie usage? Reach out via our <Link href="/#contact" className="text-aion-cyan hover:underline">contact form</Link>.
             </p>
           </section>
         </div>

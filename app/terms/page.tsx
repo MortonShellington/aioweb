@@ -99,7 +99,7 @@ export default function TermsPage() {
           <section className="pt-8 border-t border-white/10 mt-8">
             <h2 className="text-2xl font-bold text-white mb-4">Contact Us</h2>
             <p>
-              For questions about these Terms, please contact us via the <Link href="/qualification" className="text-aion-cyan hover:underline">Qualification page</Link>.
+              For questions about these Terms, please contact us via our <Link href="/#contact" className="text-aion-cyan hover:underline">contact form</Link>.
             </p>
           </section>
         </div>

@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Activity, Shield, TrendingUp, ArrowRight } from "lucide-react";
+import { Activity, Shield, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function Home() {
   const containerVariants = {
@@ -16,6 +16,34 @@ export default function Home() {
   const itemVariants: any = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
+  const [formData, setFormData] = useState({ name: "", email: "", telegram: "", message: "" });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const updateForm = (key: string, value: string) => {
+    setFormData(prev => ({ ...prev, [key]: value }));
+  };
+
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    setSubmitError(null);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Submission failed');
+      setIsSubmitted(true);
+    } catch (err: any) {
+      setSubmitError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -63,24 +91,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-xl text-aion-muted max-w-2xl leading-relaxed mb-10"
+            className="text-lg md:text-xl text-aion-muted max-w-2xl leading-relaxed"
           >
             Aion trades a multi-strategy derivatives book across centralized and decentralized venues — giving institutions and token treasuries access to our desk without giving up control of their assets.
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
-          >
-            <Link href="/qualification" className="w-full sm:w-auto px-8 py-4 rounded-full bg-aion-cyan text-aion-nav font-semibold hover:bg-white transition-all shadow-[0_0_30px_rgba(0,240,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.5)]">
-              Start Qualification
-            </Link>
-            <Link href="/strategies" className="w-full sm:w-auto px-8 py-4 rounded-full glass border border-white/10 text-white font-semibold hover:bg-white/5 transition-all">
-              The Desk
-            </Link>
-          </motion.div>
         </div>
       </section>
 
@@ -164,10 +178,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-aion-card/50" />
         <div className="absolute top-0 right-0 w-[50%] h-[100%] bg-[radial-gradient(ellipse_at_top_right,rgba(0,240,255,0.05),transparent_50%)]" />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-3xl mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
@@ -181,7 +195,7 @@ export default function Home() {
               Aion operates a multi-strategy derivatives book spanning options, arbitrage, and liquidity strategies. Strategy details are shared directly with qualified counterparties during the review process — not published here.
             </p>
 
-            <div className="space-y-4 mb-10">
+            <div className="space-y-4">
               {[
                 "Institutional-grade risk controls",
                 "Custody segregation across venues",
@@ -195,88 +209,118 @@ export default function Home() {
                 </div>
               ))}
             </div>
-
-            <Link href="/strategies" className="inline-flex items-center gap-2 text-aion-cyan hover:text-white transition-colors font-medium text-lg">
-              About The Desk <ArrowRight className="w-5 h-5" />
-            </Link>
-          </motion.div>
-
-          {/* Abstract Strategy Visualization */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative h-[500px]"
-          >
-            <div className="absolute inset-0 glass-card rounded-[40px] border border-aion-cyan/20 p-8 flex flex-col justify-between overflow-hidden group">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-aion-cyan/10 blur-[80px] rounded-full group-hover:bg-aion-cyan/20 transition-colors duration-700" />
-
-              <div>
-                <div className="text-aion-cyan text-sm font-medium mb-2">TARGET STRUCTURE</div>
-                <div className="text-3xl font-bold text-white">Yield + Liquidity</div>
-              </div>
-
-              <div className="w-full h-48 relative mt-8">
-                {/* Simulated Chart/Graph using CSS */}
-                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-white/20" />
-                <div className="absolute bottom-0 left-0 w-[1px] h-full bg-white/20" />
-
-                {/* Curve */}
-                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
-                  <path
-                    d="M 0 100 C 20 80, 40 90, 60 40 C 80 -10, 100 20, 100 20"
-                    fill="none"
-                    stroke="#00F0FF"
-                    strokeWidth="2"
-                    className="drop-shadow-[0_0_8px_rgba(0,240,255,0.5)]"
-                  />
-                  <path
-                    d="M 0 100 C 30 90, 50 60, 70 80 C 90 100, 100 50, 100 50"
-                    fill="none"
-                    stroke="#22FF88"
-                    strokeWidth="2"
-                    className="drop-shadow-[0_0_8px_rgba(34,255,136,0.5)]"
-                  />
-                </svg>
-              </div>
-
-              <div className="mt-8 flex items-center justify-between p-4 glass-panel rounded-2xl">
-                <div>
-                  <div className="text-xs text-aion-muted">Status</div>
-                  <div className="text-sm text-aion-green font-medium flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-aion-green animate-pulse" /> Active Deployments
-                  </div>
-                </div>
-                <div className="text-right">
-                  <div className="text-xs text-aion-muted">Monitored Assets</div>
-                  <div className="text-sm text-white font-medium">Token Treasuries</div>
-                </div>
-              </div>
-            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="w-full max-w-5xl mx-auto px-6 py-32">
+      {/* Contact Section */}
+      <section id="contact" className="w-full max-w-3xl mx-auto px-6 py-32 scroll-mt-24">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="glass-card rounded-[40px] p-12 md:p-16 text-center relative overflow-hidden border-aion-cyan/30"
+          className="glass-card rounded-[40px] p-8 md:p-16 relative overflow-hidden border-aion-cyan/30"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.15),transparent_60%)] pointer-events-none" />
 
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Work With Aion</h2>
-            <p className="text-lg text-aion-muted mb-10">
-              Submit your market structure profile for a preliminary assessment. Qualified counterparties will be invited to a strategic review.
-            </p>
-            <Link href="/qualification" className="inline-block px-10 py-5 rounded-full bg-white text-aion-nav font-bold text-lg hover:bg-aion-cyan hover:shadow-[0_0_40px_rgba(0,240,255,0.6)] transition-all duration-300">
-              Begin Qualification Process
-            </Link>
+          <div className="relative z-10">
+            {isSubmitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="flex flex-col items-center text-center py-16"
+              >
+                <div className="w-24 h-24 rounded-full bg-aion-green/10 flex items-center justify-center mb-8 border border-aion-green/20 shadow-[0_0_40px_rgba(34,255,136,0.15)] relative">
+                  <div className="absolute inset-0 rounded-full bg-aion-green/20 animate-ping opacity-50" />
+                  <CheckCircle2 className="w-12 h-12 text-aion-green relative z-10" />
+                </div>
+                <h2 className="text-3xl font-bold text-white mb-4">Message Sent</h2>
+                <p className="text-aion-muted text-lg max-w-md mx-auto leading-relaxed">
+                  Thanks for reaching out — our team will get back to you shortly.
+                </p>
+              </motion.div>
+            ) : (
+              <>
+                <div className="text-center mb-10">
+                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Contact Aion</h2>
+                  <p className="text-lg text-aion-muted max-w-xl mx-auto">
+                    Get in touch with our team.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-medium text-aion-muted mb-2">Name</label>
+                      <input
+                        type="text"
+                        value={formData.name}
+                        onChange={e => updateForm('name', e.target.value)}
+                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-aion-cyan focus:bg-white/[0.05] transition-all"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-aion-muted mb-2">Email</label>
+                      <input
+                        type="email"
+                        value={formData.email}
+                        onChange={e => updateForm('email', e.target.value)}
+                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-aion-cyan focus:bg-white/[0.05] transition-all"
+                        placeholder="you@example.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-aion-muted mb-2">Telegram</label>
+                    <input
+                      type="text"
+                      value={formData.telegram}
+                      onChange={e => updateForm('telegram', e.target.value)}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-aion-cyan focus:bg-white/[0.05] transition-all"
+                      placeholder="@username"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-aion-muted mb-2">Message</label>
+                    <textarea
+                      value={formData.message}
+                      onChange={e => updateForm('message', e.target.value)}
+                      rows={5}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 text-white outline-none focus:border-aion-cyan focus:bg-white/[0.05] transition-all resize-none"
+                      placeholder="How can we help?"
+                    />
+                  </div>
+
+                  {submitError && (
+                    <p className="text-red-400 text-sm text-center">{submitError}</p>
+                  )}
+
+                  <div className="flex justify-center pt-4">
+                    <motion.button
+                      whileHover={{ scale: isLoading ? 1 : 1.02 }}
+                      whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                      onClick={handleSubmit}
+                      disabled={isLoading}
+                      className="flex items-center gap-2 px-10 py-4 rounded-full bg-aion-cyan text-aion-nav font-bold text-lg hover:bg-white shadow-[0_0_30px_rgba(0,240,255,0.3)] hover:shadow-[0_0_40px_rgba(0,240,255,0.5)] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
+                      {isLoading ? (
+                        <>
+                          <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                          </svg>
+                          Sending…
+                        </>
+                      ) : 'Send Message'}
+                    </motion.button>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </motion.div>
       </section>

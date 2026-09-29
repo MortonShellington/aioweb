@@ -38,8 +38,8 @@ export default function AboutPage() {
         </div>
         <div className="glass-panel p-8 rounded-2xl border border-white/5 flex flex-col justify-center items-start">
           <h3 className="text-xl font-bold text-white mb-4">Work With Us</h3>
-          <Link href="/qualification" className="inline-flex items-center gap-2 text-aion-cyan hover:text-white transition-colors font-medium">
-            Start Qualification Process <ArrowRight className="w-5 h-5" />
+          <Link href="/#contact" className="inline-flex items-center gap-2 text-aion-cyan hover:text-white transition-colors font-medium">
+            Contact Us <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </div>

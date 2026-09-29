@@ -22,7 +22,7 @@ export default function AboutPage() {
             Aion Services SA is a proprietary trading firm operating across digital asset derivatives markets. We trade a multi-strategy book — combining options, arbitrage, and liquidity strategies — using our own capital and institutional-grade infrastructure spanning custody, execution, and clearing venues globally.
           </p>
           <p>
-            Aion is a trading counterparty: institutions and token treasuries work directly with our desk, accessing infrastructure and expertise historically reserved for traditional finance.
+            We employ and bring the necessary infrastructure and expertise historically reserved for traditional finance to the evolving digital asset marketplace.
           </p>
         </div>
       </div>

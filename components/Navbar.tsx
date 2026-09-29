@@ -23,16 +23,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-3 items-center">
         <div />
 
-        <Link href="/" className="flex items-center gap-3 group justify-self-center">
-          <img src="/aion-icon-logo.png" alt="Aion Logo" className="w-10 h-10 rounded-2xl object-cover transition-transform group-hover:scale-105 shadow-sm" />
-          <div className="flex flex-col justify-center">
-            <span className="text-xl font-bold tracking-wide text-white group-hover:text-aion-cyan transition-colors leading-tight">Aion Services SA</span>
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group justify-self-center min-w-0 max-w-full">
+          <img src="/aion-icon-logo.png" alt="Aion Logo" className="w-10 h-10 rounded-2xl object-cover transition-transform group-hover:scale-105 shadow-sm flex-shrink-0" />
+          <div className="flex flex-col justify-center min-w-0">
+            <span className="sm:hidden text-base font-bold tracking-wide text-white group-hover:text-aion-cyan transition-colors leading-tight whitespace-nowrap">Aion</span>
+            <span className="hidden sm:block text-xl font-bold tracking-wide text-white group-hover:text-aion-cyan transition-colors leading-tight whitespace-nowrap">Aion Services SA</span>
             <span className="text-[10px] text-aion-cyan hidden lg:block">Institutional Digital Asset Trading</span>
           </div>
         </Link>
 
-        <div className="justify-self-end">
-          <Link href="/#contact" className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-aion-cyan/10 border border-aion-cyan/20 text-aion-cyan hover:bg-aion-cyan hover:text-aion-nav transition-all font-medium shadow-[0_0_20px_rgba(0,240,255,0.15)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)]">
+        <div className="justify-self-end flex-shrink-0">
+          <Link href="/#contact" className="inline-flex items-center justify-center px-4 sm:px-6 py-2.5 rounded-full bg-aion-cyan/10 border border-aion-cyan/20 text-aion-cyan hover:bg-aion-cyan hover:text-aion-nav transition-all font-medium shadow-[0_0_20px_rgba(0,240,255,0.15)] hover:shadow-[0_0_30px_rgba(0,240,255,0.4)] whitespace-nowrap">
             Contact
           </Link>
         </div>

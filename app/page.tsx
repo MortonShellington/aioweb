@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Activity, Shield, TrendingUp, ArrowRight, CheckCircle2 } from "lucide-react";
 
@@ -50,7 +51,7 @@ export default function Home() {
     <div className="flex flex-col items-center">
 
       {/* Hero Section */}
-      <section className="relative w-full max-w-7xl mx-auto px-6 pt-32 pb-24 md:pt-48 md:pb-32 flex flex-col items-center text-center">
+      <section className="relative w-full max-w-7xl mx-auto px-6 pt-44 pb-24 md:pt-56 md:pb-32 flex flex-col items-center text-center">
         {/* Background Visual: Abstract Liquidity Network */}
         <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0 opacity-40">
           <div className="absolute w-[800px] h-[800px] border border-aion-cyan/20 rounded-full animate-[spin_60s_linear_infinite]">
@@ -75,7 +76,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-aion-cyan opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-aion-cyan"></span>
             </span>
-            Institutional Digital Asset Trading
+            Digital Asset Derivatives
           </motion.div>
 
           <motion.h1
@@ -91,10 +92,20 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-lg md:text-xl text-aion-muted max-w-2xl leading-relaxed"
+            className="text-lg md:text-xl text-aion-muted max-w-2xl leading-relaxed mb-10"
           >
             Aion trades a multi-strategy derivatives book across centralized and decentralized venues — giving institutions and token treasuries access to our desk without giving up control of their assets.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+          >
+            <Link href="/about" className="inline-flex items-center gap-2 px-8 py-4 rounded-full glass border border-white/10 text-white font-semibold hover:bg-white/5 hover:border-aion-cyan/30 transition-all">
+              About Us <ArrowRight className="w-5 h-5" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

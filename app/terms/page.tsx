@@ -22,7 +22,7 @@ export default function TermsPage() {
         <div className="space-y-10 text-aion-muted leading-relaxed prose prose-invert max-w-none">
           <section>
             <p className="text-lg">
-              Welcome to Aion. These Terms of Service (“Terms”) govern your access to and use of the website <a href="https://aioweb.vercel.app" className="text-aion-cyan hover:underline">https://aioweb.vercel.app</a> and any related services provided by Aion Services SA (“Aion,” “we,” “us,” or “our”).
+              Welcome to Aion. These Terms of Service (“Terms”) govern your access to and use of the website <a href="https://aion.financial" className="text-aion-cyan hover:underline">https://aion.financial</a> and any related services provided by Aion Services SA (“Aion,” “we,” “us,” or “our”).
             </p>
           </section>
 

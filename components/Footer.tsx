@@ -9,8 +9,8 @@ export default function Footer() {
           <div className="flex items-center gap-3 mb-6">
             <img src="/aion-icon-logo.png" alt="Aion Logo" className="w-10 h-10 rounded-2xl object-cover shadow-sm" />
             <div>
-              <h3 className="text-xl font-bold tracking-wide text-white">Aion</h3>
-              <p className="text-xs text-aion-cyan">Institutional Digital Asset Trading</p>
+              <h3 className="text-xl font-bold tracking-wide text-white">Aion Services SA</h3>
+              <p className="text-xs text-aion-cyan">Digital Asset Trading</p>
             </div>
           </div>
           <p className="text-aion-muted leading-relaxed max-w-sm mb-6">

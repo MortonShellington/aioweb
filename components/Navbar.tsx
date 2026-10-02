@@ -22,10 +22,23 @@ export default function Navbar() {
     )}>
       <div className="max-w-7xl mx-auto px-6 flex justify-center">
         <Link href="/" className="flex flex-col items-center gap-2 group">
-          <img src="/aion-icon-logo.png" alt="Aion Logo" className="w-12 h-12 rounded-2xl object-cover transition-transform group-hover:scale-105 shadow-sm" />
+          <img
+            src="/aion-icon-logo.png"
+            alt="Aion Logo"
+            className={cn(
+              "rounded-2xl object-cover transition-all duration-300 group-hover:scale-105 shadow-sm",
+              isScrolled ? "w-12 h-12" : "w-16 h-16 md:w-20 md:h-20"
+            )}
+          />
           <div className="flex flex-col items-center text-center">
-            <span className="text-lg font-bold tracking-wide text-white group-hover:text-aion-cyan transition-colors leading-tight">Aion Services SA</span>
-            <span className="text-[11px] text-aion-cyan tracking-wide">Digital Asset Trading</span>
+            <span className={cn(
+              "font-bold tracking-wide text-white group-hover:text-aion-cyan transition-all duration-300 leading-tight",
+              isScrolled ? "text-xl" : "text-2xl md:text-3xl"
+            )}>Aion Services SA</span>
+            <span className={cn(
+              "text-aion-cyan tracking-wide transition-all duration-300",
+              isScrolled ? "text-xs" : "text-sm md:text-base"
+            )}>Digital Asset Trading</span>
           </div>
         </Link>
       </div>

@@ -51,7 +51,7 @@ export default function Home() {
     <div className="flex flex-col items-center">
 
       {/* Hero Section */}
-      <section className="relative w-full max-w-7xl mx-auto px-6 pt-44 pb-24 md:pt-56 md:pb-32 flex flex-col items-center text-center">
+      <section className="relative w-full max-w-7xl mx-auto px-6 pt-52 pb-24 md:pt-64 md:pb-32 flex flex-col items-center text-center">
         {/* Background Visual: Abstract Liquidity Network */}
         <div className="absolute inset-0 flex justify-center items-center pointer-events-none z-0 opacity-40">
           <div className="absolute w-[800px] h-[800px] border border-aion-cyan/20 rounded-full animate-[spin_60s_linear_infinite]">
@@ -76,7 +76,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-aion-cyan opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-aion-cyan"></span>
             </span>
-            Digital Asset Derivatives
+            Principal Capital Focused
           </motion.div>
 
           <motion.h1
